@@ -16,3 +16,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+nav a.active{
+  text-decoration: underline;
+  color:#403f3f ;
+}
