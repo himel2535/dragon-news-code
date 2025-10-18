@@ -26,9 +26,7 @@ const HomeLayout = () => {
           <Outlet></Outlet>
         </section>
         <aside className="col-span-3">
-          <RightAside>
-            
-          </RightAside>
+          <RightAside></RightAside>
         </aside>
       </main>
     </div>
