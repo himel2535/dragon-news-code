@@ -1,18 +1,10 @@
 import React from "react";
-import { FaShareAlt, FaEye, FaStar } from "react-icons/fa";
+import { FaShareAlt, FaEye, FaStar, FaRegBookmark } from "react-icons/fa";
 import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const {
-    id,
-    title,
-    details,
-    author,
-    rating,
-    total_view,
-    thumbnail_url,
-    
-  } = news;
+  const { id, title, details, author, rating, total_view, thumbnail_url } =
+    news;
 
   return (
     <div className="card bg-base-100 shadow-md rounded-xl overflow-hidden">
@@ -31,7 +23,11 @@ const NewsCard = ({ news }) => {
             </p>
           </div>
         </div>
-        <FaShareAlt className="text-gray-500 cursor-pointer hover:text-accent" />
+        <div className="flex items-center gap-2">
+          <FaRegBookmark />
+
+          <FaShareAlt className="text-gray-500 cursor-pointer hover:text-accent" />
+        </div>
       </div>
 
       {/* Title */}
@@ -69,7 +65,12 @@ const NewsCard = ({ news }) => {
       <div className="flex justify-between items-center px-4 pb-4">
         <div className="flex items-center gap-2 text-orange-400">
           {[...Array(5)].map((_, i) => (
-            <FaStar key={i} className={i < rating.number ? "text-orange-400" : "text-gray-300"} />
+            <FaStar
+              key={i}
+              className={
+                i < rating.number ? "text-orange-400" : "text-gray-300"
+              }
+            />
           ))}
           <span className="text-gray-600 font-medium">{rating.number}</span>
         </div>
